@@ -1,17 +1,27 @@
 package com.template.app.ui.home
 
 import android.os.Bundle
+import android.view.View
+import androidx.fragment.app.activityViewModels
 import com.github.jairrab.viewbindingutility.viewBinding
 import com.template.app.R
 import com.template.app.base.BaseFragment
 import com.template.app.databinding.HomeViewBinding
-import timber.log.Timber
+import com.template.app.viewmodel.ActivityViewModel
+import dagger.hilt.android.AndroidEntryPoint
+import dagger.hilt.android.WithFragmentBindings
 
-class HomeView:BaseFragment(R.layout.home_view) {
+@AndroidEntryPoint
+@WithFragmentBindings
+class HomeView : BaseFragment(R.layout.home_view) {
     private val binding by viewBinding { HomeViewBinding.bind(it) }
+    private val activityViewModel by activityViewModels<ActivityViewModel>()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        Timber.v("onCreate")
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.button.setOnClickListener {
+            activityViewModel.checkSetup()
+        }
     }
 }

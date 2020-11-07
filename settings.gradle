@@ -1,2 +1,3 @@
+include ':viewmodel'
 include ':ui'
 rootProject.name = "TemplateApp"
