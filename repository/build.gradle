@@ -41,6 +41,7 @@ dependencies {
     implementation library.coreKtx
     implementation library.kotlinLib
     implementation library.javaxInject
+    implementation library.timber
 
     implementation library.daggerHilt
     kapt library.androidHiltCompiler

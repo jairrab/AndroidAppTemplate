@@ -33,11 +33,15 @@ class HomeView : BaseFragment(R.layout.home_view) {
         }
 
         binding.retrofitCheck.setOnClickListener {
-            activityViewModel.checkRepository("jairrab")
+            activityViewModel.checkRetrofit("jairrab")
         }
 
-        activityViewModel.reposLd.observe(viewLifecycleOwner) {
-            androidUtility.showToast(it.toString())
+        binding.roomCheck.setOnClickListener {
+            activityViewModel.checkRoom("jairrab")
+        }
+
+        activityViewModel.result.observe(viewLifecycleOwner) {
+            androidUtility.showToast(it)
         }
     }
 }

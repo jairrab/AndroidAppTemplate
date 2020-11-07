@@ -23,7 +23,7 @@ class MainActivity : BaseActivity() {
         setContentView(binding.root)
 
         activityViewModel.activityViewModelSetupLd.observe(this, EventObserver {
-            androidUtility.showToast("Setup is running OK")
+            androidUtility.showToast("Activity viewModel setup is running OK")
         })
     }
 }

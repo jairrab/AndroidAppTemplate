@@ -42,6 +42,7 @@ dependencies {
     implementation library.okhttpLogger
     implementation library.retrofit
     implementation library.retrofitGson
+    implementation library.timber
 
     implementation library.daggerHilt
     kapt library.androidHiltCompiler

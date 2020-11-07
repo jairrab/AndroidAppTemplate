@@ -5,12 +5,10 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.github.jairrab.androidutilities.eventobserver.Event
-import com.template.app.model.entities.GithubRepo
 import com.template.app.repository.Repository
 import com.template.app.repository.response.GitHubResponse
 import com.template.app.viewmodel.BaseViewModel
 import kotlinx.coroutines.launch
-import timber.log.Timber
 
 class ActivityViewModel @ViewModelInject constructor(
     private val repository: Repository
@@ -22,17 +20,20 @@ class ActivityViewModel @ViewModelInject constructor(
         _activityViewModelSetupLd.value = Event(Unit)
     }
 
-    private val _reposLd = MutableLiveData<List<GithubRepo>>()
-    val reposLd: LiveData<List<GithubRepo>> get() = _reposLd
+    private val _result = MutableLiveData<String>()
+    val result: LiveData<String> get() = _result
 
-    fun checkRepository(user: String) = viewModelScope.launch {
+    fun checkRetrofit(user: String) = viewModelScope.launch {
         when (val response = repository.getRepos(user)) {
             is GitHubResponse.Success -> {
-                _reposLd.value = response.data
+                val data = "${response.data.size} items received"
+                _result.value = data
             }
-            is GitHubResponse.Fail -> {
-                Timber.e(response.error)
-            }
+            is GitHubResponse.Fail -> _result.value = response.error.message
         }
+    }
+
+    fun checkRoom(user: String) = viewModelScope.launch {
+        repository.getReposAndCache(user)
     }
 }
