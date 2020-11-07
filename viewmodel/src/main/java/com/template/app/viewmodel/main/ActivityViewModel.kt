@@ -5,7 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.github.jairrab.androidutilities.eventobserver.Event
-import com.template.app.remote.models.GitHubRepo
+import com.template.app.model.GithubRepo
 import com.template.app.repository.Repository
 import com.template.app.repository.response.GitHubResponse
 import com.template.app.viewmodel.BaseViewModel
@@ -22,8 +22,8 @@ class ActivityViewModel @ViewModelInject constructor(
         _activityViewModelSetupLd.value = Event(Unit)
     }
 
-    private val _reposLd = MutableLiveData<List<GitHubRepo>>()
-    val reposLd: LiveData<List<GitHubRepo>> get() = _reposLd
+    private val _reposLd = MutableLiveData<List<GithubRepo>>()
+    val reposLd: LiveData<List<GithubRepo>> get() = _reposLd
 
     fun checkRepository(user: String) = viewModelScope.launch {
         when (val response = repository.listRepos(user)) {

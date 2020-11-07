@@ -1,5 +1,5 @@
 package com.template.app.remote.models
 
-data class GitHubRepo(
+data class RemoteGitHubRepo(
     val html_url:String
 )
