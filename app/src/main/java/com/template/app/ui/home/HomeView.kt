@@ -3,6 +3,7 @@ package com.template.app.ui.home
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.github.jairrab.androidutilities.utility.AndroidUtility
 import com.github.jairrab.viewbindingutility.viewBinding
 import com.template.app.R
@@ -38,6 +39,10 @@ class HomeView : BaseFragment(R.layout.home_view) {
 
         binding.roomCheck.setOnClickListener {
             activityViewModel.checkRoom("jairrab")
+        }
+
+        binding.otherView.setOnClickListener {
+            findNavController().navigate(R.id.other_view)
         }
 
         activityViewModel.result.observe(viewLifecycleOwner) {

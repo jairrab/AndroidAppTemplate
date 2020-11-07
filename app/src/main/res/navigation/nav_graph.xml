@@ -9,4 +9,9 @@
         android:name="com.template.app.ui.home.HomeView"
         android:label="@string/main" />
 
+    <fragment
+        android:id="@+id/other_view"
+        android:name="com.template.app.ui.othersview.OtherView"
+        android:label="Other View" />
+
 </navigation>
