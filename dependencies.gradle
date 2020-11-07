@@ -81,6 +81,7 @@ ext {
     preference = '1.1.1'
     rateThisApp = "1.1.3"
     recyclerview = "1.1.0"
+    retrofit = "2.9.0"
     robolectric = '4.4'
     room = '2.2.5'
     rxJava = "2.2.19"
@@ -94,7 +95,7 @@ ext {
     library = [
             androidHiltCompiler    : "androidx.hilt:hilt-compiler:$androidHiltCompiler",
             androidHiltLifecycle   : "androidx.hilt:hilt-lifecycle-viewmodel:$androidHiltLifecycle",
-            androidJUnit : "androidx.test.ext:junit:$androidJUnit",
+            androidJUnit           : "androidx.test.ext:junit:$androidJUnit",
             androidUtilities       : "com.github.jairrab:androidUtilities:$androidUtilities",
             androidxTestRunner     : "androidx.test:runner:$androidxTestRunner",
             appCompat              : "androidx.appcompat:appcompat:$appcompat",
@@ -178,6 +179,7 @@ ext {
             preferences            : "androidx.preference:preference:$preference",
             rateThisApp            : "io.github.kobakei:ratethisapp:$rateThisApp",
             recyclerView           : "androidx.recyclerview:recyclerview:$recyclerview",
+            retrofit               : "com.squareup.retrofit2:retrofit:$retrofit",
             robolectric            : "org.robolectric:robolectric:$robolectric",
             room                   : "androidx.room:room-runtime:$room",
             roomCompiler           : "androidx.room:room-compiler:$room",

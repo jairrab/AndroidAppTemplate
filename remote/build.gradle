@@ -1,8 +1,6 @@
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
-    id 'kotlin-kapt'
-    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -35,20 +33,13 @@ android {
 }
 
 dependencies {
-    api project(":repository")
-
-    implementation library.androidHiltLifecycle
-    implementation library.androidUtilities
-    implementation library.appCompat
-    implementation library.constraintLayout
     implementation library.coreKtx
-    implementation library.daggerHilt
     implementation library.kotlinLib
-    implementation library.timber
-    implementation library.viewModel
-
-    kapt library.androidHiltCompiler
-    kapt library.daggerHiltCompiler
+    api library.retrofit
+    implementation library.javaxInject
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation "com.squareup.okhttp3:okhttp:4.4.1"
+    implementation "com.squareup.okhttp3:logging-interceptor:4.4.1"
 
     testImplementation library.jUnit
 }

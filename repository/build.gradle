@@ -35,17 +35,12 @@ android {
 }
 
 dependencies {
-    api project(":repository")
+    api project(":remote")
 
-    implementation library.androidHiltLifecycle
-    implementation library.androidUtilities
-    implementation library.appCompat
-    implementation library.constraintLayout
     implementation library.coreKtx
-    implementation library.daggerHilt
     implementation library.kotlinLib
-    implementation library.timber
-    implementation library.viewModel
+    implementation library.javaxInject
+    implementation library.daggerHilt
 
     kapt library.androidHiltCompiler
     kapt library.daggerHiltCompiler

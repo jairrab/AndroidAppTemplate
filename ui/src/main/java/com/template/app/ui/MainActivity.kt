@@ -22,7 +22,7 @@ class MainActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        activityViewModel.checkSetupLd.observe(this, EventObserver {
+        activityViewModel.activityViewModelSetupLd.observe(this, EventObserver {
             androidUtility.showToast("Setup is running OK")
         })
     }
