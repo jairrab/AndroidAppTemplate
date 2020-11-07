@@ -56,6 +56,7 @@ dependencies {
     implementation library.materialLibrary
     implementation library.navigationFragment
     implementation library.navigationUi
+    implementation library.preferences
     implementation library.timber
     implementation library.viewBindingUtility
 
