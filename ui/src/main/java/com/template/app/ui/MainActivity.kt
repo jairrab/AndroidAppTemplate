@@ -1,14 +1,13 @@
 package com.template.app.ui
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.viewModels
 import com.github.jairrab.androidutilities.eventobserver.EventObserver
 import com.github.jairrab.androidutilities.utility.AndroidUtility
 import com.github.jairrab.viewbindingutility.viewBinding
 import com.template.app.base.BaseActivity
 import com.template.app.databinding.ActivityMainBinding
-import com.template.app.viewmodel.ActivityViewModel
+import com.template.app.viewmodel.main.ActivityViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 

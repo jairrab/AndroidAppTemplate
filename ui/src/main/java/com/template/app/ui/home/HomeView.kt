@@ -7,7 +7,7 @@ import com.github.jairrab.viewbindingutility.viewBinding
 import com.template.app.R
 import com.template.app.base.BaseFragment
 import com.template.app.databinding.HomeViewBinding
-import com.template.app.viewmodel.ActivityViewModel
+import com.template.app.viewmodel.main.ActivityViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import dagger.hilt.android.WithFragmentBindings
 
