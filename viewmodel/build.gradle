@@ -35,9 +35,6 @@ android {
 }
 
 dependencies {
-    androidTestImplementation library.androidJUnit
-    androidTestImplementation library.espresso
-
     implementation library.androidHiltLifecycle
     implementation library.androidUtilities
     implementation library.appCompat
