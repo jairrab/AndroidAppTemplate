@@ -35,12 +35,12 @@ android {
 }
 
 dependencies {
-    api library.retrofit
     implementation library.coreKtx
     implementation library.javaxInject
     implementation library.kotlinLib
     implementation library.okhttp
     implementation library.okhttpLogger
+    implementation library.retrofit
     implementation library.retrofitGson
 
     implementation library.daggerHilt

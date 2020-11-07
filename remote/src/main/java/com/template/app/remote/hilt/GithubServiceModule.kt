@@ -13,6 +13,6 @@ object GithubServiceModule {
 
     @Provides
     fun providesGithubService(): GithubApi {
-        return RetrofitService.getApiClient(true)
+        return RetrofitService.getApiClient()
     }
 }
