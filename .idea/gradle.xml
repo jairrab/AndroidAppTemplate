@@ -11,9 +11,9 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/remote" />
             <option value="$PROJECT_DIR$/repository" />
-            <option value="$PROJECT_DIR$/ui" />
             <option value="$PROJECT_DIR$/viewmodel" />
           </set>
         </option>
