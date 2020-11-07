@@ -8,6 +8,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ApplicationComponent
+import timber.log.Timber
 
 @Module
 @InstallIn(ApplicationComponent::class)
@@ -15,6 +16,8 @@ object RoomModule {
     @Provides
     fun providesLocalDb(application: Application): LocalDb {
         val database = AppDatabase.getInstance(application)
-        return LocalDbImpl(database)
+        val localDbImpl = LocalDbImpl(database)
+        Timber.v("Room database initialized")
+        return localDbImpl
     }
 }

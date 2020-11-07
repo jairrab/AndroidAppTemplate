@@ -1,14 +1,14 @@
 package com.template.app.remote
 
-import com.template.app.remote.models.RemoteGitHubRepo
+import com.template.app.remote.models.RemoteData
 import retrofit2.http.GET
 import retrofit2.http.Path
 
-interface GithubApi {
+interface ServerApi {
     @GET("users/{user}/repos")
     suspend fun getRepos(
         @Path("user") user: String
-    ): List<RemoteGitHubRepo>
+    ): List<RemoteData>
 
     /* @GET("live?format=1")
     suspend fun getExchangeRate(

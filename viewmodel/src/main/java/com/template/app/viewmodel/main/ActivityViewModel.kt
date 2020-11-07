@@ -6,7 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.github.jairrab.androidutilities.eventobserver.Event
 import com.template.app.repository.Repository
-import com.template.app.repository.response.GitHubResponse
+import com.template.app.repository.response.ServerResponse
 import com.template.app.viewmodel.BaseViewModel
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -34,16 +34,16 @@ class ActivityViewModel @ViewModelInject constructor(
     }
 
     fun checkRetrofit(user: String) = viewModelScope.launch {
-        when (val response = repository.getRepos(user)) {
-            is GitHubResponse.Success -> {
+        when (val response = repository.getDataList(user)) {
+            is ServerResponse.Success -> {
                 val data = "${response.data.size} items received"
                 _result.value = data
             }
-            is GitHubResponse.Fail -> _result.value = response.error.message
+            is ServerResponse.Fail -> _result.value = response.error.message
         }
     }
 
     fun checkRoom(user: String) = viewModelScope.launch {
-        repository.getReposAndCache(user)
+        repository.saveDataList(user)
     }
 }

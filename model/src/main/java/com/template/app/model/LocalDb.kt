@@ -1,9 +1,9 @@
 package com.template.app.model
 
-import com.template.app.model.entities.GithubRepo
+import com.template.app.model.entities.Data
 import kotlinx.coroutines.flow.Flow
 
 interface LocalDb {
-    suspend fun saveGithubRepos(list: List<GithubRepo>)
-    fun getRepos(): Flow<List<GithubRepo>>
+    suspend fun saveDataList(list: List<Data>)
+    fun getDataList(): Flow<List<Data>>
 }

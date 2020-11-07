@@ -4,18 +4,18 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.template.app.model.entities.GithubRepo
-import com.template.app.model.room.dao.GithubRepoDao
+import com.template.app.model.entities.Data
+import com.template.app.model.room.dao.DataDao
 
 @Database(
     entities = [
-        GithubRepo::class,
+        Data::class,
     ],
     version = 1
 )
 //@TypeConverters(RoomTypeConverters::class)
 abstract class AppDatabase : RoomDatabase() {
-    abstract val githubRepoDao: GithubRepoDao
+    abstract val dataDao: DataDao
 
     companion object {
         private const val DB_NAME = "projects.db"
