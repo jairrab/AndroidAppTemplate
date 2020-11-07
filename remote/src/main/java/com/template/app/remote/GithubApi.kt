@@ -6,7 +6,7 @@ import retrofit2.http.Path
 
 interface GithubApi {
     @GET("users/{user}/repos")
-    suspend fun listRepos(
+    suspend fun getRepos(
         @Path("user") user: String
     ): List<RemoteGitHubRepo>
 

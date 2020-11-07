@@ -10,9 +10,9 @@ class RepositoryImpl @Inject constructor(
     private val githubApi: GithubApi,
     private val githubRepoMapper: GithubRepoMapper,
 ) : Repository {
-    override suspend fun listRepos(user: String): GitHubResponse {
+    override suspend fun getRepos(user: String): GitHubResponse {
         return try {
-            val list = githubApi.listRepos(user).map { githubRepoMapper.map(it) }
+            val list = githubApi.getRepos(user).map { githubRepoMapper.map(it) }
             GitHubResponse.Success(list)
         } catch (e: Exception) {
             GitHubResponse.Fail(e)

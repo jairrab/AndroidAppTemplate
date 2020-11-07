@@ -43,5 +43,9 @@ dependencies {
     kapt library.androidHiltCompiler
     kapt library.daggerHiltCompiler
 
+    implementation library.room
+    implementation library.roomKtx
+    kapt library.roomCompiler
+
     testImplementation library.jUnit
 }

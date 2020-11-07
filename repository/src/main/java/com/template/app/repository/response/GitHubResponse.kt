@@ -1,6 +1,6 @@
 package com.template.app.repository.response
 
-import com.template.app.model.GithubRepo
+import com.template.app.model.entities.GithubRepo
 
 sealed class GitHubResponse {
     class Success(val data: List<GithubRepo>) : GitHubResponse()
