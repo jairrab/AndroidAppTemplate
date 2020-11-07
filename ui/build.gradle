@@ -43,18 +43,22 @@ android {
 dependencies {
     androidTestImplementation library.androidJUnit
     androidTestImplementation library.espresso
+
     implementation library.androidUtilities
     implementation library.appCompat
     implementation library.appCompat
     implementation library.constraintLayout
     implementation library.coreKtx
+    implementation library.daggerHilt
     implementation library.kotlinLib
     implementation library.materialLibrary
+    implementation library.navigationFragment
+    implementation library.navigationUi
+    implementation library.timber
     implementation library.viewBindingUtility
-    testImplementation library.jUnit
-    implementation library.daggerHilt
+
     kapt library.androidHiltCompiler
     kapt library.daggerHiltCompiler
 
-
+    testImplementation library.jUnit
 }
