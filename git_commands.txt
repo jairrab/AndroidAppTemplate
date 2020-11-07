@@ -1,0 +1,6 @@
+Checking in a new project to repo:
+git init
+git add -A
+git commit -a -m "first commit"
+git remote add origin https:***
+git push origin master
