@@ -8,20 +8,30 @@ import com.github.jairrab.androidutilities.eventobserver.Event
 import com.template.app.repository.Repository
 import com.template.app.repository.response.GitHubResponse
 import com.template.app.viewmodel.BaseViewModel
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 class ActivityViewModel @ViewModelInject constructor(
     private val repository: Repository
 ) : BaseViewModel() {
+    private val _result = MutableLiveData<String>()
+    val result: LiveData<String> get() = _result
+
+    init {
+        viewModelScope.launch {
+            repository.getRepos().collect {
+                if (it.isEmpty()) return@collect
+                _result.value = "${it.size} items observed from Room"
+            }
+        }
+    }
+
     private val _activityViewModelSetupLd = MutableLiveData<Event<Unit>>()
     val activityViewModelSetupLd: LiveData<Event<Unit>> get() = _activityViewModelSetupLd
 
     fun checkActivityViewModelSetup() {
         _activityViewModelSetupLd.value = Event(Unit)
     }
-
-    private val _result = MutableLiveData<String>()
-    val result: LiveData<String> get() = _result
 
     fun checkRetrofit(user: String) = viewModelScope.launch {
         when (val response = repository.getRepos(user)) {

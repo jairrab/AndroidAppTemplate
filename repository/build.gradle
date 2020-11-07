@@ -39,8 +39,9 @@ dependencies {
     api project(":remote")
 
     implementation library.coreKtx
-    implementation library.kotlinLib
+    implementation library.coroutinesAndroid
     implementation library.javaxInject
+    implementation library.kotlinLib
     implementation library.timber
 
     implementation library.daggerHilt

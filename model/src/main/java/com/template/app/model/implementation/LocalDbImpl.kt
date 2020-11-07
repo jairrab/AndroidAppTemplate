@@ -3,6 +3,8 @@ package com.template.app.model.implementation
 import com.template.app.model.LocalDb
 import com.template.app.model.entities.GithubRepo
 import com.template.app.model.room.AppDatabase
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.flow.Flow
 import timber.log.Timber
 
 internal class LocalDbImpl(
@@ -16,5 +18,10 @@ internal class LocalDbImpl(
             Timber.e(e)
             throw e
         }
+    }
+
+    @ExperimentalCoroutinesApi
+    override fun getRepos(): Flow<List<GithubRepo>> {
+        return appDatabase.githubRepoDao.getGithubReposDistinctUntilChanged()
     }
 }

@@ -1,10 +1,12 @@
 package com.template.app.repository.implementation
 
 import com.template.app.model.LocalDb
+import com.template.app.model.entities.GithubRepo
 import com.template.app.remote.GithubApi
 import com.template.app.repository.Repository
 import com.template.app.repository.mappers.GithubRepoMapper
 import com.template.app.repository.response.GitHubResponse
+import kotlinx.coroutines.flow.Flow
 import timber.log.Timber
 import javax.inject.Inject
 
@@ -34,5 +36,9 @@ class RepositoryImpl @Inject constructor(
         } catch (e: Exception) {
             Timber.e(e)
         }
+    }
+
+    override fun getRepos(): Flow<List<GithubRepo>> {
+        return localDb.getRepos()
     }
 }
