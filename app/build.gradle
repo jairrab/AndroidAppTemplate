@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -50,5 +52,9 @@ dependencies {
     implementation library.materialLibrary
     implementation library.viewBindingUtility
     testImplementation library.jUnit
+    implementation library.daggerHilt
+    kapt library.androidHiltCompiler
+    kapt library.daggerHiltCompiler
+
 
 }
