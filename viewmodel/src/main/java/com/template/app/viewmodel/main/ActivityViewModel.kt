@@ -5,7 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.github.jairrab.androidutilities.eventobserver.Event
-import com.template.app.remote.GitHubRepo
+import com.template.app.remote.models.GitHubRepo
 import com.template.app.repository.Repository
 import com.template.app.repository.response.GitHubResponse
 import com.template.app.viewmodel.BaseViewModel

@@ -1,5 +1,6 @@
-package com.template.app.remote
+package com.template.app.remote.retrofit
 
+import com.template.app.remote.GithubApi
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import okhttp3.logging.HttpLoggingInterceptor.Level.BODY
@@ -7,19 +8,18 @@ import okhttp3.logging.HttpLoggingInterceptor.Level.NONE
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
-import javax.inject.Inject
 
 
 object RetrofitService {
     private const val BASE_URL = "https://api.github.com/"
 
-    fun getApiClient(isDebug:Boolean): GithubService = Retrofit.Builder()
+    fun getApiClient(isDebug: Boolean): GithubApi = Retrofit.Builder()
         .baseUrl(BASE_URL)
-        .client(getO(isDebug))
+        .client(getOkHttpClient(isDebug))
         .addConverterFactory(GsonConverterFactory.create())
-        .build().create(GithubService::class.java)
+        .build().create(GithubApi::class.java)
 
-    private fun getO(isDebug:Boolean): OkHttpClient {
+    private fun getOkHttpClient(isDebug: Boolean): OkHttpClient {
         return OkHttpClient.Builder()
             .addInterceptor(loggingInterceptor(isDebug))
             //.addInterceptor(cacheInterceptor())
@@ -28,7 +28,7 @@ object RetrofitService {
             .build()
     }
 
-    private fun loggingInterceptor(isDebug:Boolean) =
+    private fun loggingInterceptor(isDebug: Boolean) =
         HttpLoggingInterceptor().apply { level = if (isDebug) BODY else NONE }
 }
 

@@ -52,7 +52,6 @@ dependencies {
     implementation library.appCompat
     implementation library.constraintLayout
     implementation library.coreKtx
-    implementation library.daggerHilt
     implementation library.kotlinLib
     implementation library.materialLibrary
     implementation library.navigationFragment
@@ -60,6 +59,7 @@ dependencies {
     implementation library.timber
     implementation library.viewBindingUtility
 
+    implementation library.daggerHilt
     kapt library.androidHiltCompiler
     kapt library.daggerHiltCompiler
 
