@@ -7,5 +7,5 @@ import kotlinx.coroutines.flow.Flow
 interface Repository {
     suspend fun getDataList(user: String): ServerResponse
     suspend fun saveDataList(user: String)
-    fun getRepos(): Flow<List<Data>>
+    fun getDataFlow(): Flow<List<Data>>
 }

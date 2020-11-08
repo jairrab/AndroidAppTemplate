@@ -20,7 +20,7 @@ class ActivityViewModel @ViewModelInject constructor(
 
     init {
         viewModelScope.launch {
-            repository.getRepos().collect {
+            repository.getDataFlow().collect {
                 val s = "${it.size} items observed from Room"
                 Timber.v("$s | $it")
                 if (it.isEmpty()) return@collect

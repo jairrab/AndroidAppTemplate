@@ -38,7 +38,7 @@ class RepositoryImpl @Inject constructor(
         }
     }
 
-    override fun getRepos(): Flow<List<Data>> {
+    override fun getDataFlow(): Flow<List<Data>> {
         return localDb.getDataList()
     }
 }
