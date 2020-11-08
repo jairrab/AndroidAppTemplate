@@ -12,6 +12,7 @@ import com.template.app.databinding.HomeViewBinding
 import com.template.app.viewmodel.main.ActivityViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import dagger.hilt.android.WithFragmentBindings
+import timber.log.Timber
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -26,7 +27,9 @@ class HomeView : BaseFragment(R.layout.home_view) {
         super.onViewCreated(view, savedInstanceState)
 
         binding.hiltSetupCheck.setOnClickListener {
-            androidUtility.showToast("Hilt setup is working")
+            val text = "Hilt setup is working"
+            Timber.v(text)
+            androidUtility.showToast(text)
         }
 
         binding.viewModelCheck.setOnClickListener {

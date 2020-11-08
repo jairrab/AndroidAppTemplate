@@ -7,7 +7,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import okhttp3.logging.HttpLoggingInterceptor.Level.BODY
 import okhttp3.logging.HttpLoggingInterceptor.Level.NONE
 import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.converter.moshi.MoshiConverterFactory
 import java.util.concurrent.TimeUnit
 
 
@@ -17,7 +17,7 @@ object RetrofitService {
     fun getServerApi(): ServerApi = Retrofit.Builder()
         .baseUrl(BASE_URL)
         .client(getOkHttpClient())
-        .addConverterFactory(GsonConverterFactory.create())
+        .addConverterFactory(MoshiConverterFactory.create())
         .build().create(ServerApi::class.java)
 
     private fun getOkHttpClient(): OkHttpClient {

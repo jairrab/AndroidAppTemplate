@@ -8,7 +8,7 @@ class Mapper @Inject constructor() {
     fun map(data: RemoteData): Data {
         return Data(
             id = data.id,
-            htmlUrl = data.html_url
+            htmlUrl = data.htmlUrl
         )
     }
 }

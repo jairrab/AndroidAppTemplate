@@ -41,7 +41,7 @@ dependencies {
     implementation library.okhttp
     implementation library.okhttpLogger
     implementation library.retrofit
-    implementation library.retrofitGson
+    implementation library.retrofitMoshi
     implementation library.timber
 
     implementation library.daggerHilt

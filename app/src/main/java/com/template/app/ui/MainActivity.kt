@@ -9,6 +9,7 @@ import com.template.app.base.BaseActivity
 import com.template.app.databinding.ActivityMainBinding
 import com.template.app.viewmodel.main.ActivityViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import timber.log.Timber
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -23,7 +24,9 @@ class MainActivity : BaseActivity() {
         setContentView(binding.root)
 
         activityViewModel.activityViewModelSetupLd.observe(this, EventObserver {
-            androidUtility.showToast("Activity viewModel setup is running OK")
+            val text = "Activity viewModel setup is running OK"
+            Timber.v(text)
+            androidUtility.showToast(text)
         })
     }
 }
