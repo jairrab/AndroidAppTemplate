@@ -7,6 +7,6 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "DATA_TABLE")
 data class Data(
     @PrimaryKey
-    @ColumnInfo(name = "github_repo_id") val id: String,
-    @ColumnInfo(name = "github_repo_html_url") val htmlUrl: String
+    @ColumnInfo(name = "data_id") val id: String,
+    @ColumnInfo(name = "data_html_url") val htmlUrl: String
 )
