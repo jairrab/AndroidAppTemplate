@@ -1,7 +1,7 @@
 package com.template.app.remote.retrofit
 
 import com.template.app.remote.BuildConfig
-import com.template.app.remote.ServerApi
+import com.template.app.remote.RemoteApi
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import okhttp3.logging.HttpLoggingInterceptor.Level.BODY
@@ -14,11 +14,11 @@ import java.util.concurrent.TimeUnit
 object RetrofitService {
     private const val BASE_URL = "https://api.github.com/"
 
-    fun getServerApi(): ServerApi = Retrofit.Builder()
+    fun getRemoteApi(): RemoteApi = Retrofit.Builder()
         .baseUrl(BASE_URL)
         .client(getOkHttpClient())
         .addConverterFactory(MoshiConverterFactory.create())
-        .build().create(ServerApi::class.java)
+        .build().create(RemoteApi::class.java)
 
     private fun getOkHttpClient(): OkHttpClient {
         return OkHttpClient.Builder()

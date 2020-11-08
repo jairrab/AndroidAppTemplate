@@ -4,7 +4,7 @@ import com.template.app.remote.models.RemoteData
 import retrofit2.http.GET
 import retrofit2.http.Path
 
-interface ServerApi {
+interface RemoteApi {
     @GET("users/{user}/repos")
     suspend fun getRepos(
         @Path("user") user: String

@@ -10,7 +10,6 @@ import dagger.hilt.android.components.ApplicationComponent
 @Module
 @InstallIn(ApplicationComponent::class)
 abstract class RetrofitModule {
-
     @Binds
     abstract fun bindViewModelFactory(repositoryImpl: RepositoryImpl): Repository
 }
